@@ -11,7 +11,7 @@
   <div class="home text-center flex flex-col justify-center">
     <div class="transform w-full">
       <div class="tracking-wide slogan text-[3.5rem] xl:text-[5.25rem] font-extralight">
-        基于人工智能的自动化渗透测试工具
+        GyoiThonPlus
       </div>
       <p class="text-subtext text-[1.5rem] xl:text-[1.75rem] font-extralight tracking-wide">
         Automated Penetration Testing Tool Based on Artificial Intelligence
@@ -20,7 +20,7 @@
         @click="getIn"
         class="bg-primary-300 hover:bg-primary-400 cursor-pointer mt-lg shadow border-0 outline-none text-xl px-[64px] py-lg rounded-sm"
       >
-        开始任务
+        Let's Go!
       </button>
       <br />
 <!--      <div class="inline-block text-gray-200 text-xl mr-lg">Powered by:</div>-->

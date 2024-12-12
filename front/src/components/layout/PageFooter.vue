@@ -2,11 +2,11 @@
 <template>
   <div class="page-footer">
     <div class="links">
-      <a class="link" href="https://www.trimps.ac.cn/gass/index.html" target="_blank">公安部第三研究所</a>
+      <a class="link" href="https://www.trimps.ac.cn/gass/index.html" target="_blank">GyoiThonPlus</a>
     </div>
     <div class="copyright">
       Copyright
-      <CopyrightOutlined class="icon-copyright" /> 2024 公安三所
+      <CopyrightOutlined class="icon-copyright" /> 2024 GyoiThonPlus based on Gyoithon
     </div>
   </div>
 </template>
