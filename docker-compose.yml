@@ -1,0 +1,53 @@
+version: '3.7'
+
+services:
+  # 后端 Flask 服务
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flask
+    volumes:
+      - app-data:/app
+    ports:
+      - "8080:8080"
+    environment:
+      - FLASK_APP=app
+      - FLASK_ENV=development
+    command: python3 run.py
+    depends_on:
+      - redis
+
+  # Celery 服务
+  celery:
+    build:
+      context: .
+      dockerfile: Dockerfile.celery
+    container_name: celery
+    volumes:
+      - app-data:/app
+    command: bash -c "export C_FORCE_ROOT='true' && export FLASK_APP=app && export FLASK_ENV=development && celery -A app.celery worker --loglevel=info"
+    depends_on:
+      - redis
+      - flask
+
+  # Redis 服务
+  redis:
+    image: "redis:latest"
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  # 前端 Vite 服务
+  frontend:
+    build:
+      context: .
+      dockerfile: front/Dockerfile
+    container_name: frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - flask
+
+volumes:
+  app-data:
